@@ -42,7 +42,7 @@ catapiweb/
 ├── src/
 │   ├── main/
 │   │   ├── java/
-│   │   │   └── com/tuusuario/catapiweb/
+│   │   │   └── com/quiz.jm/catapiweb/
 │   │   │       ├── controller/
 │   │   │       ├── model/
 │   │   │       ├── repository/
@@ -52,7 +52,7 @@ catapiweb/
 │   │       └── static/
 │   └── test/
 │       └── java/
-│           └── com/tuusuario/catapiweb/
+│           └── com/quiz.jm/catapiweb/
 ├── pom.xml
 └── README.md
 ```
