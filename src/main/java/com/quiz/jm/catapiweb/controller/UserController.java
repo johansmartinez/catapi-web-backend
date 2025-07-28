@@ -37,9 +37,11 @@ public class UserController {
                    @ApiResponse(responseCode = "400", description = "Invalid input or username already exists")
                })
     @PostMapping("/register")
-    public ResponseEntity<UserResponseDto> registerUser(@Valid @RequestBody UserRegisterDto registerDto) {
+    public ResponseEntity<String> registerUser(@Valid @RequestBody UserRegisterDto registerDto) {
         UserResponseDto registeredUser = userService.registerUser(registerDto);
-        return new ResponseEntity<>(registeredUser, HttpStatus.CREATED);
+        UserLoginDto loginDto = new UserLoginDto(registerDto.getUsername(), registerDto.getPassword());
+        String jwt = userService.loginUser(loginDto);
+        return new ResponseEntity<>(jwt, HttpStatus.CREATED);
     }
 
     @Operation(summary = "Login an existing user",
