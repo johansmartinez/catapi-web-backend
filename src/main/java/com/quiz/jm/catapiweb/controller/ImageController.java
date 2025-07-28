@@ -18,8 +18,8 @@ public class ImageController {
         this.imageService = imageService;
     }
 
-    @GetMapping("/imagesbybreedid") 
-    public ResponseEntity<List<ImageDto>> getImagesByBreedId(@RequestParam("breed_id") String breedId) {
+    @GetMapping("/imagesbybreedid/{breed_id}") 
+    public ResponseEntity<List<ImageDto>> getImagesByBreedId(@PathVariable("breed_id") String breedId) {
         List<ImageDto> images = imageService.getImagesByBreedId(breedId);
         return ResponseEntity.ok(images);
     }
